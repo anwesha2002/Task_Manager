@@ -36,7 +36,7 @@ Clone this repository to your local machine:
 
 bash
 Copy code
-git clone [https://github.com/anwesha2002/Task-Manager.gitt](https://github.com/anwesha2002/Task-Manager.git)
+git clone [https://github.com/anwesha2002/Task-Manager.git](https://github.com/anwesha2002/Task-Manager.git)
 Navigate to the project directory:
 
 bash
