@@ -4,6 +4,7 @@ import {  Button, Card } from 'react-bootstrap';
 import { faPenToSquare, faTrashCan } from "@fortawesome/free-regular-svg-icons";
 
 function Note( props ){
+    console.log(props)
     return(
         <Card className={style.noteCard}>
             <Card.Body>
@@ -18,9 +19,9 @@ function Note( props ){
                     {props.note.text}
                 </Card.Text>
             </Card.Body>
+
         </Card>
-      
-        
+
     );
 }
 

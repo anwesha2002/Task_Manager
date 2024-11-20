@@ -43,22 +43,24 @@ function Homepagebody(){
 
     function onNoteSave(note, status){
         console.log(JSON.stringify(note));
-        if(status=="todo") setTodo([note,...todo]);
-        else if(status=="doing") setDoing([note, ...doing]);
+        if(status==="todo") setTodo([note,...todo]);
+        else if(status==="doing") setDoing([note, ...doing]);
         else setDone([note, ...done]);
     }
 
     function onnoteedit(note){
-        if(note.status=="todo")  setTodo(todo.map(existingnote => existingnote._id === note._id ? note : existingnote));
+        if(note.status==="todo")  setTodo(todo.map(existingnote => existingnote._id === note._id ? note : existingnote));
         
     }
+
+    //
 
     return(
         <div>
             <Row xs={1} md={2} xl={3} className="g-4">
-                <Col><Board notes={todo} ondelete={onDelete} oneditclick={(note)=>editNote(note)} onplusclick={()=>onAddnew("todo")} title="Todo Task"></Board></Col>
-                <Col><Board notes={doing} oneditclick={(note)=>editNote(note)} onplusclick={()=>onAddnew("doing")} title="Doing Task"></Board></Col>
-                <Col><Board notes={done} oneditclick={(note)=>editNote(note)} onplusclick={()=>onAddnew("done")} title="Done Task"></Board></Col>
+                <Col><Board notes={todo} ondelete={(note)=>onDelete(note)} oneditclick={(note)=>editNote(note)} onplusclick={()=>onAddnew("todo")} title="Todo Task"></Board></Col>
+                <Col><Board notes={doing} ondelete={(note)=>onDelete(note)} oneditclick={(note)=>editNote(note)} onplusclick={()=>onAddnew("doing")} title="Doing Task"></Board></Col>
+                <Col><Board notes={done} ondelete={(note)=>onDelete(note)} oneditclick={(note)=>editNote(note)} onplusclick={()=>onAddnew("done")} title="Done Task"></Board></Col>
             </Row>
             {  
                shownotedialoge &&
